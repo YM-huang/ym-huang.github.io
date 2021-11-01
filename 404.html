@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="WebUI/css/base.css" rel="stylesheet" />
+    <link href="WebUI/css/404.css" rel="stylesheet" />
+    <script src="WebUI/js/jquery/jquery-1.4.1.min.js"></script>
+    <script src="WebUI/js/href.js"></script>
+    <script>
+        isBrowser("/CompatibilityMode/404.html", "/404.html", "/404.html");
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="WebUI/css/404/css/bootstrap.min.css">
+    <link rel="stylesheet" href="WebUI/css/404/css/animate.css">
+    <link rel="stylesheet" href="WebUI/css/404/css/style.css">
+
+
+    <!-- Modernizr JS -->
+    <script src="WebUI/js/404/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="WebUI/js/404/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container fh5co-container">
+
+    <div class="errors">
+        <div class="row">
+            <div class="col-md-12 animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-404-wrap" id="video" data-vide-bg="WebUI/css/404/video/Crocodile" data-vide-options="position: 0 50%">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center fh5co-404-text animate-box"  data-animate-effect="fadeIn">
+                <h2>Looks like you got lost</h2>
+                <h3>Back in <b class="sec">5</b> seconds</h3>
+                </br>
+                <p><a href="index.html" class="btn btn-primary">Go back home</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- jQuery -->
+<script src="WebUI/js/404/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="WebUI/js/404/bootstrap.min.js"></script>
+<!-- Vide -->
+<script src="WebUI/js/404/jquery.vide.min.js"></script>
+<!-- Waypoints -->
+<script src="WebUI/js/404/jquery.waypoints.min.js"></script>
+<!-- Main JS -->
+<script src="WebUI/js/404/main.js"></script>
+</body>
+<script>
+    $(function () {
+        tops();
+        var cur = 5;
+        var snt = setInterval(function () {
+            cur--;
+            $(".sec").text(cur);
+            if (cur == 0) {
+                clearInterval(snt);
+                location.href = "index.html";
+            }
+        }, 1000);
+    });
+
+    function tops() {
+        var modalHeight = $(".errors").height();
+        var screenHeight = $(window).height();
+        var Tops = (screenHeight - modalHeight) / 2;
+        if (Tops > 10) {
+            $(".errors").css("margin-top", Tops);
+        }
+        else {
+            $(".errors").css("margin-top", "10px");
+        }
+    }
+    window.onresize = function () {
+        tops();
+    }
+</script>
+</html>
